@@ -4,11 +4,10 @@ class Jet {
       this.game = game;
       this.element = document.getElementById('jet');
       
-      // These dimensions are now handled by CSS
       this.width = parseInt(window.getComputedStyle(this.element).getPropertyValue("width"));
       this.height = parseInt(window.getComputedStyle(this.element).getPropertyValue("height"));
   
-      this.left = this.gameScreen.clientWidth / 2 - this.width / 2; // Center the jet
+      this.left = this.gameScreen.clientWidth / 2 - this.width / 2; 
       this.bottom = 0;
   
       this.render();

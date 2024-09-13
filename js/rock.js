@@ -2,7 +2,7 @@ class Rock {
   constructor(gameScreen, speed) {
     this.gameScreen = gameScreen;
     this.element = document.createElement('div');
-    this.element.classList.add('rocks'); // CSS will handle the styles
+    this.element.classList.add('rocks'); 
     this.gameScreen.appendChild(this.element);
 
     this.left = Math.floor(Math.random() * (this.gameScreen.clientWidth - 50)); 

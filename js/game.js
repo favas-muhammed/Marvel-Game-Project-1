@@ -9,8 +9,8 @@ class Game {
       this.isGameOver = false;
       this.score = 0;
       this.brightened = [false, false, false, false, false, false];
-      this.rockSpeed = 1; // Initial rock speed
-      this.maxScore = 60; // Win condition
+      this.rockSpeed = 1; 
+      this.maxScore = 60; 
   }
 
   start() {
@@ -32,7 +32,7 @@ class Game {
           if (countdown < 0) {
               clearInterval(intervalId);
               countdownElement.remove();
-              callback(); // Start the game
+              callback(); 
           }
       }, 1000);
   }
@@ -97,7 +97,7 @@ class Game {
       if (this.score % 10 === 0) {
           const level = this.score / 10;
           this.showLevelCompletion(level);
-          this.rockSpeed += 0.5; // Increase rock speed every 10 points
+          this.rockSpeed += 0.5; 
 
           const imageIndex = Math.min(Math.floor(this.score / 10) - 1, 5);
           if (!this.brightened[imageIndex]) {
@@ -150,7 +150,7 @@ class Game {
           nextLevelButton.textContent = 'Enter Next Level';
           nextLevelButton.classList.add('menu-button');
           nextLevelButton.addEventListener('click', () => {
-              // Implement next level logic here
+              
               console.log('Entering next level...');
           });
           endMessageElement.appendChild(nextLevelButton);
