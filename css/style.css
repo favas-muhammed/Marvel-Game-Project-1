@@ -1,31 +1,60 @@
 body {
-  width: 100%;
-  overflow: hidden;
-  background: url("../images/space.jpg");
+  font-family: 'Press Start 2P', cursive;
+  background: url("../images/space.jpg") no-repeat center center fixed;
   background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#countdown {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Press Start 2P', cursive;
-  font-size: 3em;
-  color: white;
-  text-align: center;
+.hidden {
+  display: none !important;
+}
+
+#main-menu, #about-screen, #game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
-  border: 5px solid white;
-  z-index: 1000;
-  display: none; /* Hide initially */
+  border-radius: 10px;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+#about-text {
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+}
+
+.menu-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5em;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 #board {
   position: relative;
   width: 500px;
   height: 500px;
-  margin: 40px auto;
   border: 2px solid white;
   background-color: black;
   overflow: hidden;
@@ -35,96 +64,65 @@ body {
   position: absolute;
   width: 40px;
   height: 40px;
-  background: url("../images/rocket.png");
+  background: url("../images/rocket.png") no-repeat center center;
   background-size: contain;
-  background-repeat: no-repeat;
   left: 50%;
   bottom: 0px;
 }
 
-.bullets {
-  position: absolute;
-  bottom: 40px;
-  width: 20px;
-  height: 20px;
-  background: url("../images/bullet.png");
-  background-size: contain;
-  background-repeat: no-repeat;
+#points {
+  font-size: 2em;
+  color: white;
+  margin-top: 20px;
 }
 
 .rocks {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background: url("../images/alien.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-
+  width: 20px;
+  height: 20px;
+  background: url("../images/alien.png") no-repeat center center;
+  border-radius: 50%;
 }
 
-#points {
+.bullets {
   position: absolute;
-  top: 0px;
-  margin: 40px;
-  opacity: 0.7;
-  font-size: 10em;
-  color: white;
+  width: 5px;
+  height: 10px;
+  background-color: yellow;
 }
+
 #image-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 20px 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-top: auto;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
 .image-wrapper {
-  position: relative;
-  flex-basis: calc(16.666% - 10px);
-  margin-bottom: 20px;
-  overflow: hidden;
+  width: 50px;
+  height: 50px;
 }
 
 .equal-image {
   width: 100%;
-  height: auto;
-  max-height: 100px;
-  object-fit: contain;
-  opacity: 0.1; 
-  transition: opacity 0.3s ease;
-
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  transition: filter 0.3s;
 }
+
 .brightened {
-  opacity: 1;
-}
-#game-over {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Press Start 2P', cursive;
-  font-size: 2em;
-  color: red;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  border: 5px solid white;
-  z-index: 1000;
+  filter: brightness(1);
 }
 
-#level-completion {
-  position: absolute;
+#game-over, #level-completion {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1.5em;
-  color: yellow;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 15px;
-  border: 3px solid white;
   z-index: 1000;
-  display: none; 
 }
