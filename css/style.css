@@ -64,11 +64,16 @@ h1 {
   position: absolute;
   width: 40px;
   height: 40px;
-  background: url("../images/rocket.png") no-repeat center center;
+  background: url("../images/rocket.png");
+  background-repeat: no-repeat;
+
   background-size: contain;
   left: 50%;
   bottom: 0px;
 }
+  
+
+
 
 #points {
   font-size: 2em;
@@ -78,18 +83,28 @@ h1 {
 
 .rocks {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background: url("../images/alien.png") no-repeat center center;
+  width: 50px;
+  height: 50px;
+  background: url("../images/alien.png");
   border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
+
 
 .bullets {
   position: absolute;
   width: 5px;
   height: 10px;
   background-color: yellow;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
+
+
+
+
+
 
 #image-container {
   display: flex;
@@ -125,4 +140,43 @@ h1 {
   border-radius: 10px;
   text-align: center;
   z-index: 1000;
+}
+
+#game-over, #level-completion {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+#game-over .menu-button {
+  margin-top: 20px;
+  font-size: 1em;
+  padding: 10px 15px;
+}
+
+#countdown {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em;
+  color: white;
+  z-index: 1000;
+}
+
+.rocks {
+  position: absolute;
+  background-position: center;
+}
+
+.bullets {
+  position: absolute;
+  background-position: center;
 }
